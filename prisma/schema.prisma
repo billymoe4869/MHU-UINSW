@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  password      String
+  role          Role     @default(ADMIN)
+
+  lecturers     Lecturer[]
+  news          News[]
+  announcements Announcement[]
+  events        Event[]
+  products      Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Lecturer{
+  id            String         @id @default(cuid())
+
+  name          String
+  nidn          String?        @unique
+
+  photoUrl      String?
+
+  academicRank  String?
+  structuralPosition  String?
+  expertise     String?
+
+
+  email         String?
+
+  authorId      String
+  author        User           @relation(fields: [authorId], references: [id])
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+}
+
+model News {
+  id            String         @id @default(cuid())
+
+  title         String
+
+  slug          String         @unique
+
+  content       String         @db.Text
+
+  thumbnailUrl  String?
+
+  status        ContentStatus  @default(DRAFT)
+
+  authorId      String
+  author        User           @relation(fields: [authorId], references: [id])
+
+  publishedAt   DateTime?
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Announcement {
+  id            String         @id @default(cuid())
+
+  title         String
+
+  content       String         @db.Text
+
+  status        ContentStatus  @default(DRAFT)
+
+  authorId      String
+  author        User           @relation(fields: [authorId],references: [id])
+
+  publishedAt   DateTime?
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Event{
+  id            String         @id @default(cuid())
+
+  title         String
+
+  description   String         @db.Text
+
+  status        ContentStatus  @default(DRAFT)
+
+  location      String?
+
+  imageUrl      String?
+
+  eventDate     DateTime
+
+  authorId      String
+  author        User           @relation(fields: [authorId], references: [id])
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Product{
+  id           String          @id @default(cuid())
+  name         String
+  slug         String          @unique
+
+  description  String?
+
+  price        Int
+
+  imageUrl     String?
+
+  status      ContentStatus   @default(DRAFT)
+
+  authorId     String
+  author       User           @relation(fields: [authorId], references: [id])
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model SiteSetting {
+  id                     Int       @id @default(1)
+
+  profile                String    @db.Text
+
+  vision                 String    @db.Text
+
+  mission                String    @db.Text
+
+  organizationImageUrl   String?
+
+  contactEmail           String?
+  contactPhone           String?
+  address                String?
+
+  updatedAt              DateTime  @updatedAt
+}
