@@ -5,7 +5,7 @@ export default function LayoutPublic({ children }) {
     return (
       <>
         <Navbar />
-            <main className="min-h-dvh flex flex-col">
+            <main className="min-h-dvh flex flex-col bg-(--color-background)">
                 {children}
             </main>
         <Footer />

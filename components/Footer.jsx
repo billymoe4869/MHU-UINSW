@@ -4,7 +4,7 @@ import { IoLogoInstagram, IoMail, IoLogoFacebook } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-800 text-(--color-background)">
+    <footer className="w-full bg-stone-700 text-(--color-background)">
       <div className="container-footer flex flex-col">
         <div className="top-wrapper grid w-full max-w-7xl mx-auto px-6 py-12 gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
           <div className="logo-footer flex gap-1 flex-col lg:col-span-2 lg:border-r border-gray-700 mr-6 my-auto">
@@ -29,7 +29,7 @@ export default function Footer() {
               Organisasi Mahasiswa Program Studi Manajemen Haji dan Umrah
             </span>
           </div>
-          <div className="links-footer">
+          <div className="links-footer md:mx-10">
             <h5 className="text-xl font-semibold mb-4">Info Lainya</h5>
             <ul className="flex flex-col space-y-5 mt-6 font-extralight">
               <li>
