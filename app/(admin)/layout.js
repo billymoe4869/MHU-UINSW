@@ -1,6 +1,6 @@
 export default function LayoutAdmin({ children }) {
     return (
-        <div>
+        <div className="">
             {children}
         </div>
     )
