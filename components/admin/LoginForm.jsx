@@ -3,12 +3,14 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 const LoginForm = () => {
   const [isPending, setPending] = useState(false);
   const [error, setError] = useState("");
   const formRef = useRef(null);
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,16 +68,28 @@ const LoginForm = () => {
               className="w-full py-2 px-4 border border-gray-400 focus:outline-none focus:border-gray-600 "
             />
           </div>
-          <div className="mt-5 flex-col flex gap-4">
+          <div className="mt-5 flex-col flex gap-4 relative">
             <label htmlFor="password">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="********"
               required
               suppressHydrationWarning={true}
               className="w-full py-2 px-4 border border-gray-400 focus:outline-none focus:border-gray-600"
             />
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 translate-y-1/2 cursor-pointer"
+              suppressHydrationWarning={true}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <IoEyeOffOutline className="size-5" />
+              ) : (
+                <IoEyeOutline className="size-5" />
+              )}
+            </button>
           </div>
           <div className="mt-5 flex gap-3">
             <button

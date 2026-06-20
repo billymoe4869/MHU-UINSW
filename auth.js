@@ -10,7 +10,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         email: {
           label: "Email",
           type: "email",
-          placeholder: "johndoe@yourmail",
         },
         password: { label: "Password", type: "password" },
       },

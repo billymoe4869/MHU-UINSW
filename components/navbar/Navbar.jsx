@@ -25,7 +25,7 @@ export default function Navbar() {
     <header className="w-full border-b sticky top-0 left-0 right-0 bg-stone-600 text-(--color-background) z-20 h-auto shadow-sm">
       <div className="wrapper border-b border-gray-500 max-w-7xl flex items-center justify-between mx-auto">
         <div className="logo-container flex gap-1 px-4 py-2 w-auto justify-center items-center md:mb-0 mb-4">
-          <Link href="/" className="">
+          <Link href="/">
             <Logo />
           </Link>
           <div className="teks-logo flex flex-col md:text-left text-center">
