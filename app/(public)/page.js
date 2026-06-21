@@ -1,6 +1,6 @@
 import { getSiteSettings } from "@/lib/service/siteSetting";
 import HeroSection from "@/components/HeroSection";
-import NewsHero from "@/components/newsHero";
+import NewsHero from "@/components/NewsHero";
 
 export default async function Home() {
   const siteSetting = await getSiteSettings()
