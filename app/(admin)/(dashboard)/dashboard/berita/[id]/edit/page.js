@@ -1,4 +1,4 @@
-import NewsForm from "@/components/admin/NewsForm";
+import NewsForm from "@/components/admin/form/NewsForm";
 import { notFound } from "next/navigation";
 import { getNewsById } from "@/lib/service/news";
 

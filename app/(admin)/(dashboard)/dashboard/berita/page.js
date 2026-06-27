@@ -1,5 +1,5 @@
-import DeleteButton from "@/components/admin/DeleteButton";
 import { getAllNewsAdmin } from "@/lib/service/news";
+import DeleteNewsBtn from "@/components/admin/button/DeleteNewsBtn";
 import Link from "next/link";
 import { MdEdit } from "react-icons/md";
 import { PiPlusBold } from "react-icons/pi";
@@ -52,7 +52,7 @@ export default async function DaftarBerita() {
                       <Link href={`/dashboard/berita/${item.id}/edit`}>
                         <MdEdit className="size-4" />
                       </Link>
-                      <DeleteButton id={item.id} />
+                      <DeleteNewsBtn id={item.id} />
                     </div>
                   </td>
                 </tr>

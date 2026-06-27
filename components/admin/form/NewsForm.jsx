@@ -1,9 +1,9 @@
 "use client";
 
-import SubmitButton from "./SubmitButton";
 import { createNewsActions, updateNewsActions } from "@/lib/actions/news";
 import Image from "next/image";
 import { useState } from "react";
+import SubmitButton from "../SubmitButton";
 
 export default function NewsForm({ berita = null }) {
   const isEdit = !!berita;
