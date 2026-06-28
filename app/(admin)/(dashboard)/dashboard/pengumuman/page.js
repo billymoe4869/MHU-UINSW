@@ -33,7 +33,7 @@ export default async function DaftarPengumuman() {
             {Announ.length === 0 ? (
               <tr>
                 <td colSpan={4} className="text-center p-6 text-stone-400">
-                  Belum ada berita. Tambahkan Berita Pertama!
+                  Belum ada pengumuman. Tambahkan pengumuman Pertama!
                 </td>
               </tr>
             ) : (

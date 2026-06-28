@@ -6,8 +6,8 @@ export default function DeleteNewsBtn({ id }) {
   return (
     <DeleteButton
       title={`Konfirmasi Hapus Berita`}
-          message={`Apakah anda yakin menghapus berita ini`}
-          onDelete={() => deleteNewsAction(id)}
+      message={`Apakah anda yakin menghapus berita ini`}
+      onDelete={() => deleteNewsAction(id)}
     />
   );
 }
