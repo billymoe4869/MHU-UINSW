@@ -42,9 +42,11 @@ model Lecturer{
 
   photoUrl      String?
 
+  position      String?
   academicRank  String?
   structuralPosition  String?
   expertise     String?
+  education      String?
 
 
   email         String?

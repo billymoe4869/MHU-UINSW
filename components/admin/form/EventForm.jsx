@@ -153,7 +153,7 @@ export default function EventForm({ event = null }) {
             </select>
           </div>
           <div className="text-center mt-4">
-                      <SubmitButton disabled={!!fileError} />
+            <SubmitButton disabled={!!fileError} />
           </div>
         </form>
       </div>

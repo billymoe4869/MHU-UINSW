@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 import ConfirmModal from "../ConfirmModal";
 import { useState } from "react";
 
-export default function DeleteButton({ id, onDelete, message, title }) {
+export default function DeleteButton({ onDelete, message, title }) {
   const [open, setOpen] = useState(false);
 
   async function handleDelete() {
