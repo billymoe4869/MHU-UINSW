@@ -14,6 +14,7 @@ export default function Sidebar() {
     { label: "Pengumuman", href: "/dashboard/pengumuman" },
     { label: "Kegiatan", href: "/dashboard/kegiatan" },
     { label: "Produk", href: "/dashboard/produk" },
+    { label: "Exit Dashboard", href: "/" },
   ];
   return (
     <aside className="sticky top-0 left-0 bottom-0 md:w-50 h-full bg-stone-500 shadow-sm flex flex-col items-center gap-6">
@@ -34,7 +35,7 @@ export default function Sidebar() {
         <button
           type="button"
           className=" p-4 flex w-full gap-2 items-center hover:bg-stone-400 justify-center rounded-md cursor-pointer"
-          onClick={() => signOut({ callbackUrl: "/login" })}
+          onClick={() => signOut({ callbackUrl: "/" })}
         >
           {<IoLogOutOutline className="size-6" />} Logout
         </button>

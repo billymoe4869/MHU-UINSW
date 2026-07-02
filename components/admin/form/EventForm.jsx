@@ -68,7 +68,7 @@ export default function EventForm({ event = null }) {
           </div>
           <div className="flex flex-col gap-2 mb-6">
             <label htmlFor="description" className="text-gray-500">
-              deskrpsi kegiatan
+              Deskrpsi Kegiatan
             </label>
             <textarea
               id="description"

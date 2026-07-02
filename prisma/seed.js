@@ -8,16 +8,30 @@ const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  const hashedPassword = await bcrypt.hash("admin1234", 10);
-
-  await prisma.user.create({
-    data: {
-      name: "SUPER_ADMIN",
-      email: "seedawal@gmail.com",
-      password: hashedPassword,
+  const admins = [
+    {
+      name: "Developer",
+      email: "billymoe4869@gmail.com",
+      password: "Bakerstreet221b",
       role: Role.SUPER_ADMIN,
     },
-  });
+  ];
+
+  for (const admin of admins) {
+    const hashedPassword = await bcrypt.hash(admin.password, 10);
+
+    await prisma.user.upsert({
+      where: { email: admin.email },
+      update: { password: hashedPassword },
+      create: {
+        name: admin.name,
+        email: admin.email,
+        password: hashedPassword,
+        role: admin.role,
+      },
+    });
+  }
+
   console.log("seed data berhasil");
 }
 

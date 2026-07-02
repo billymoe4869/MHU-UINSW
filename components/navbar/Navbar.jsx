@@ -6,7 +6,7 @@ import Logo from "../Logo";
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ children }) {
   const menus = [
     { label: "Beranda", href: "/" },
     { label: "Profil", href: "/profil" },
@@ -44,6 +44,7 @@ export default function Navbar() {
             {menus.map((m) => {
               return <Navlink key={m.href} href={m.href} label={m.label} />;
             })}
+            {children}
           </ul>
         </nav>
         <div className="md:hidden block md:mr-6 mr-10">
@@ -53,7 +54,10 @@ export default function Navbar() {
               onClick={handleClick}
             />
           ) : (
-            <IoMenuSharp className="size-7 cursor-pointer" onClick={handleClick} />
+            <IoMenuSharp
+              className="size-7 cursor-pointer"
+              onClick={handleClick}
+            />
           )}
         </div>
       </div>
