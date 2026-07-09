@@ -1,15 +1,13 @@
-import { getSiteSettings } from "@/lib/service/siteSetting";
 import HeroSection from "@/components/HeroSection";
 import NewsHero from "@/components/NewsHero";
 
-export default async function Home() {
-  const siteSetting = await getSiteSettings()
+export default function Home() {
   return (
     <>
-      <div className="mt-8 mx-auto p-4 max-w-7xl">
-        <HeroSection siteSetting={siteSetting} />
+      <HeroSection />
+      <div className="mt-8 bg-gray-200 p-8">
+        <NewsHero />
       </div>
-      <NewsHero />
     </>
   );
 }

@@ -15,6 +15,8 @@ import {
   MdEvent,
   MdSchool,
 } from "react-icons/md";
+import { getMonthlyContentStats } from "@/lib/service/stats";
+import ContentChart from "@/components/admin/ContentChart";
 
 export default async function Dashboard() {
   const session = await auth();
@@ -28,6 +30,7 @@ export default async function Dashboard() {
     recentNews,
     recentAnnoun,
     upcomingEvent,
+    monthlyStats
   ] = await Promise.all([
     countNews(),
     countAnnouncement(),
@@ -37,6 +40,7 @@ export default async function Dashboard() {
     getRecentNewsAdmin(),
     getRecentAnnounAdmin(),
     getUpcomingEventAdmin(),
+    getMonthlyContentStats()
   ]);
 
   const stats = [
@@ -100,9 +104,9 @@ export default async function Dashboard() {
   ];
 
   return (
-    <section className="mt-10 p-6">
+    <section className="mt-8 p-6">
       {/* Header */}
-      <h1 className="text-2xl font-semibold mb-2">
+      <h1 className="text-3xl font-semibold mb-2">
         Selamat Datang, {session?.user?.name}
       </h1>
       <p className="mb-10 text-stone-600">
@@ -122,33 +126,19 @@ export default async function Dashboard() {
             >
               <div className="flex gap-2 mb-4 items-center">
                 <Icon className={`text-3xl ${item.color}`} />
-                <span className="text-xl text-stone-700 font-semibold">{item.label}</span>
+                <span className="text-xl text-stone-700 font-semibold">
+                  {item.label}
+                </span>
               </div>
               <div>
                 <p className={`font-bold text-2xl ${item.color}`}>
                   {item.count}
                 </p>
-                <p className="text-stone-700 mt-1">total {item.label}</p>
+                <p className="text-stone-700 mt-1 lowercase">total {item.label}</p>
               </div>
             </Link>
           );
         })}
-      </div>
-
-      {/* QuickActions */}
-      <div className="mb-8">
-        <h2 className="text-xl mb-2 font-semibold">Pintasan</h2>
-        <div className="flex flex-wrap gap-3">
-          {quickActions.map((action) => (
-            <Link
-              key={action.label}
-              href={action.href}
-              className="px-4 py-2 bg-(--color-primary) rounded-lg text-stone-50 hover:bg-stone-700"
-            >
-              {action.label}
-            </Link>
-          ))}
-        </div>
       </div>
 
       {/* Konten terbaru */}
@@ -208,7 +198,7 @@ export default async function Dashboard() {
           )}
         </div>
       </div>
-      <div className="rounded-lg p-4 border border-stone-500">
+      <div className="rounded-lg p-4 border border-stone-500 mb-8">
         <h2 className="text-xl mb-2 font-semibold">Kegiatan Mendatang</h2>
         {upcomingEvent.length === 0 ? (
           <p className="text-sm text-stone-400">Belum ada kegiatan.</p>
@@ -227,6 +217,28 @@ export default async function Dashboard() {
             ))}
           </ul>
         )}
+      </div>
+      {/* grafik konten perbulan */}
+      <div className="p-4 mb-8 bg-white rounded-lg hover:shadow-sm">
+        <h2 className="mb-4 text-2xl font-semibold text-center">
+          Grafik Konten
+        </h2>
+        <ContentChart data={monthlyStats} />
+      </div>
+      {/* QuickActions */}
+      <div className="mb-8">
+        <h2 className="text-xl mb-2 font-semibold">Pintasan</h2>
+        <div className="flex flex-wrap gap-3">
+          {quickActions.map((action) => (
+            <Link
+              key={action.label}
+              href={action.href}
+              className="px-4 py-2 bg-(--color-primary) rounded-lg text-stone-50 hover:bg-stone-700"
+            >
+              {action.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

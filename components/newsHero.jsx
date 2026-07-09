@@ -1,15 +1,23 @@
+
+import NewsCard from "./public/NewsCard";
 import { getLatestNews } from "@/lib/service/news";
-import Card from "@/components/Card";
 
 export default async function NewsHero() {
-    const news = await getLatestNews()
-    return (
-      <section className="p-5 mb-8 mt-8 bg-stone-200 max-w-screen">
-        <div className="container-news grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-7xl mx-auto">
-          {news.map((n) => {
-            return <Card key={n.id} berita={n} />;
-          })}
-        </div>
-      </section>
-    );
+  const berita = await getLatestNews();
+  return (
+      <div className="max-w-7xl grid lg:grid-cols-3 md:grid-cols-2 mx-auto p-4 gap-4 grid-cols-1">
+        {berita.map((data) => {
+          return (
+            <NewsCard
+              key={data.id}
+              title={data.title}
+              slug={data.slug}
+              thumbnailUrl={data.thumbnailUrl}
+              publishedAt={data.publishedAt}
+              content={data.content}
+            />
+          );
+        })}
+      </div>
+  );
 }

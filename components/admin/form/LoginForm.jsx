@@ -49,9 +49,9 @@ const LoginForm = () => {
   };
   return (
     <>
-      <div className="flex max-w-5xl items-center flex-col justify-center my-auto p-6 bg-gray-200">
-        <h1 className="text-4xl font-bold">Selamat Datang</h1>
-        <form className="w-2xl" ref={formRef} onSubmit={handleSubmit}>
+      <div className="flex max-w-3xl h-140 rounded-lg items-center flex-col justify-center my-auto p-6 bg-stone-200">
+        <h1 className="text-4xl font-bold mb-4">Selamat Datang</h1>
+        <form className="w-110 mt-10" ref={formRef} onSubmit={handleSubmit}>
           {error && (
             <div className="mt-5 p-3 text-sm text-red-600 bg-red-100 border border-red-300 rounded-sm">
               {error}
@@ -93,7 +93,7 @@ const LoginForm = () => {
           </div>
           <div className="mt-5 flex gap-3">
             <button
-              className="px-6 py-2 bg-stone-400 cursor-pointer active:bg-stone-600 rounded-sm text-gray-100"
+              className="px-6 py-2 bg-stone-50 cursor-pointer active:bg-stone-200 hover:bg-stone-100 rounded-sm text-stone-700"
               disabled={isPending}
               type="submit"
               suppressHydrationWarning={true}
@@ -101,7 +101,7 @@ const LoginForm = () => {
               {isPending ? "Memproses..." : "Login"}
             </button>
             <button
-              className="px-6 py-2 bg-red-500 hover:bg-red-600 cursor-pointer active:bg-red-700 rounded-sm text-white disabled:bg-red-300 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-2 bg-red-600 hover:bg-red-700 cursor-pointer active:bg-red-700 rounded-sm text-white disabled:bg-red-300 disabled:cursor-not-allowed transition-colors"
               type="button"
               onClick={handleClear}
               disabled={isPending}
