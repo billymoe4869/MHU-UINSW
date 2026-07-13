@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "../Logo";
+import Logo from "../public/Logo";
 import Link from "next/link";
 import SideLink from "./SideLink";
 import { signOut } from "next-auth/react";

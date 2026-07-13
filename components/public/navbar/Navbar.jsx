@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Navlink from "@/components/navbar/Navlink";
+import Navlink from "@/components/public/navbar/Navlink";
 import Logo from "../Logo";
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import { useState } from "react";

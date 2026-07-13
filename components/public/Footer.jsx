@@ -34,7 +34,7 @@ export default function Footer() {
             <ul className="flex flex-col space-y-5 mt-6 font-extralight">
               <li>
                 <Link
-                  href="/profile"
+                  href="/profil"
                   className=" relative w-fit cursor-pointer after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-slate-200 after:transition-all after:duration-500 hover:after:w-full hover:text-(--color-accent)"
                 >
                   Tentang Kami
