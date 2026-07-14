@@ -1,4 +1,4 @@
-import NewsCard from "./NewsCard";
+import NewsCard from "./card/NewsCard";
 import { getLatestNews } from "@/lib/service/news";
 
 export default async function NewsHero() {

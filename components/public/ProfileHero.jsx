@@ -6,11 +6,11 @@ export default async function ProfileHero() {
   const profil = await getSiteSettings();
 
   return (
-    <section className="bg-gray-200 p-8 mb-6">
-      <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-center mb-4">
+    <section className="bg-gray-200 p-8">
+      <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-center mb-4 mt-6">
         Profil Prodi
       </h2>
-      <div className="mx-auto px-6 py-20 max-w-7xl">
+      <div className="mx-auto px-6 py-8 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center ">
           <div>
             <h3 className="font-semibold mb-4 text-xl text-stone-700">

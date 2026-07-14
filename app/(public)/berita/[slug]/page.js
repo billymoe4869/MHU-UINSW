@@ -1,4 +1,5 @@
 import { getNewsBySlug, getLatestNews } from "@/lib/service/news";
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +21,7 @@ export default async function page({ params }) {
     : null;
 
   return (
-    <div className="max-w-7xl grid mt-8 grid-cols-1 md:grid-cols-[1fr_360px] mx-auto">
+    <section className="max-w-7xl grid mt-8 grid-cols-1 md:grid-cols-[1fr_360px] mx-auto">
       <article className="max-w-4xl p-6 mb-16 bg-stone-100">
         <Link
           href="/berita"
@@ -57,7 +58,8 @@ export default async function page({ params }) {
           {news.content}
         </div>
       </article>
-      <aside className="p-4 flex flex-col gap-4 bg-gray-100">
+      {/* sidebar */}
+      <aside className="p-4 flex flex-col gap-4 bg-stone-200 rounded-sm ml-2 border-l border-stone-300">
         <span className="text-2xl font-semibold mb-6 border-b border-stone-500 py-4">
           Berita Terbaru Lainnya
         </span>
@@ -74,6 +76,6 @@ export default async function page({ params }) {
           <FaInstagram className="text-white size-4" />
         </div>
       </aside>
-    </div>
+    </section>
   );
 }

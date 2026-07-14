@@ -145,7 +145,7 @@ export default async function Dashboard() {
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         {/* berita terbaru admin */}
         <div className="rounded-lg bg-white p-4 border border-stone-500">
-          <h2 className="text-xl mb-2 font-semibold">Berita Terbaru</h2>
+          <h2 className="text-xl mb-2 font-semibold">Data Berita Terbaru</h2>
           {recentNews === 0 ? (
             <p>Belum ada berita.</p>
           ) : (
@@ -172,7 +172,7 @@ export default async function Dashboard() {
         </div>
         {/* pengumuman terbaru admin */}
         <div className="rounded-lg bg-white p-4 border border-stone-500">
-          <h2 className="text-xl mb-2 font-semibold">Berita Terbaru</h2>
+          <h2 className="text-xl mb-2 font-semibold">Data Pengumuman Terbaru</h2>
           {recentAnnoun === 0 ? (
             <p className="text-sm text-stone-400">Belum ada pengumuman.</p>
           ) : (
@@ -199,7 +199,7 @@ export default async function Dashboard() {
         </div>
       </div>
       <div className="rounded-lg p-4 border border-stone-500 mb-8">
-        <h2 className="text-xl mb-2 font-semibold">Kegiatan Mendatang</h2>
+        <h2 className="text-xl mb-2 font-semibold">Data Kegiatan Mendatang</h2>
         {upcomingEvent.length === 0 ? (
           <p className="text-sm text-stone-400">Belum ada kegiatan.</p>
         ) : (

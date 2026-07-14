@@ -1,5 +1,5 @@
 import { getAllNews } from "@/lib/service/news";
-import NewsCard2 from "@/components/public/NewsCard2";
+import NewsCard2 from "@/components/public/card/NewsCard2";
 import Link from "next/link";
 
 export default async function NewsPage({ searchParams }) {
