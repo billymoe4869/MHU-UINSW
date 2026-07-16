@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_NUMBER = "6281234567890"; 
+const WHATSAPP_NUMBER = "+62 899-4535-553"; 
 
 export default async function DetailProduk({ params }) {
   const { slug } = await params;
