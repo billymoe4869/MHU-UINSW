@@ -113,7 +113,7 @@ export default function LecturerForm({ lecturer = null }) {
               id="structuralPosition"
               name="structuralPosition"
               placeholder="contoh: kaprodi, sekretaris prodi, kepala lab"
-              defaultValue={lecturer?.academicRank || ""}
+              defaultValue={lecturer?.structuralPosition || ""}
               className="w-full border border-stone-700 rounded-sm p-2 focus:outline-0"
             />
           </div>
@@ -181,8 +181,8 @@ export default function LecturerForm({ lecturer = null }) {
                 src={preview}
                 alt="preview"
                 width={250}
-                height={160}
-                className="mt-2 h-40 object-cover"
+                height={288}
+                className="mt-2 object-cover"
               />
             )}
           </div>

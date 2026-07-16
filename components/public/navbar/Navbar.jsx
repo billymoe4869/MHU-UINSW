@@ -16,9 +16,10 @@ export default function Navbar({ children }) {
     { label: "Kegiatan", href: "/kegiatan" },
     { label: "Produk", href: "/produk" },
   ];
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = () => {
-    setOpen(!open);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -38,17 +39,24 @@ export default function Navbar({ children }) {
         </div>
         <nav className="mr-6">
           <ul
-            className={`${open ? "flex" : "hidden"} absolute top-full left-0 w-full flex-col bg-slate-700  md:static md:flex md:flex-row md:w-auto md:bg-transparent md:space-x-8
+            className={`${isOpen ? "flex" : "hidden"} absolute top-full left-0 w-full flex-col bg-slate-700  md:static md:flex md:flex-row md:w-auto md:bg-transparent md:space-x-8
             md:py-0 py-6 items-center text-center`}
           >
             {menus.map((m) => {
-              return <Navlink key={m.href} href={m.href} label={m.label} />;
+              return (
+                <Navlink
+                  key={m.href}
+                  href={m.href}
+                  label={m.label}
+                  onClick={() => setIsOpen(false)}
+                />
+              );
             })}
             {children}
           </ul>
         </nav>
         <div className="md:hidden block md:mr-6 mr-10">
-          {open ? (
+          {isOpen ? (
             <IoCloseSharp
               className="size-7 cursor-pointer"
               onClick={handleClick}

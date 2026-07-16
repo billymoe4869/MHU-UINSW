@@ -4,6 +4,7 @@ import ProfileHero from "@/components/public/ProfileHero";
 import EventHero from "@/components/public/EventHero";
 import AnnouncementHero from "@/components/public/AnnouncementHero";
 import ProductHero from "@/components/public/ProductHero";
+import LecturerHero from "@/components/public/LecturerHero";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <AnnouncementHero />
       </div>
       <ProductHero />
+      <LecturerHero />
     </>
   );
 }

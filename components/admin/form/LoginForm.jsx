@@ -49,9 +49,15 @@ const LoginForm = () => {
   };
   return (
     <>
-      <div className="flex max-w-3xl h-140 rounded-lg items-center flex-col justify-center my-auto p-6 bg-stone-200">
-        <h1 className="text-4xl font-bold mb-4">Selamat Datang</h1>
-        <form className="w-110 mt-10" ref={formRef} onSubmit={handleSubmit}>
+      <div className="flex w-full max-w-md md:max-w-lg rounded-lg items-center flex-col justify-center p-6 md:p-8 bg-stone-200">
+        <h1 className="text-2xl text-center md:text-4xl font-bold mb-4">
+          Selamat Datang
+        </h1>
+        <form
+          className="w-full mt-6 md:mt-10"
+          ref={formRef}
+          onSubmit={handleSubmit}
+        >
           {error && (
             <div className="mt-5 p-3 text-sm text-red-600 bg-red-100 border border-red-300 rounded-sm">
               {error}
@@ -91,7 +97,7 @@ const LoginForm = () => {
               )}
             </button>
           </div>
-          <div className="mt-5 flex gap-3">
+          <div className="mt-5 flex flex-col sm:flex-row gap-3">
             <button
               className="px-6 py-2 bg-stone-50 cursor-pointer active:bg-stone-200 hover:bg-stone-100 rounded-sm text-stone-700"
               disabled={isPending}

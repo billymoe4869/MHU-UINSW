@@ -2,11 +2,11 @@ import Sidebar from "@/components/admin/Sidebar";
 
 export default function LayoutDashboard({ children }) {
   return (
-    <>
-      <div className="grid grid-cols-5 min-h-dvh">
+    <div className="grid md:grid-cols-5 min-h-dvh">
+      <div className="md:col-span-1">
         <Sidebar />
-        <main className="col-span-3">{children}</main>
       </div>
-    </>
+      <main className="md:col-span-4 col-span-5 md:p-6">{children}</main>
+    </div>
   );
 }
