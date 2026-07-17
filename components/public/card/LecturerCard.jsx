@@ -13,6 +13,7 @@ export default function LecturerCard({ lecturer }) {
             src={lecturer.photoUrl}
             alt={lecturer.name}
             fill
+            loading="eager"
             sizes="(max-width: 768px) 50vw, 25vw"
             className="object-cover"
           />

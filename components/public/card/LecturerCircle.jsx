@@ -13,6 +13,7 @@ export default function LecturerCircle({ lecturer }) {
             src={lecturer.photoUrl}
             alt={lecturer.name}
             fill
+            loading="eager"
             sizes="112px"
             className="object-cover"
           />

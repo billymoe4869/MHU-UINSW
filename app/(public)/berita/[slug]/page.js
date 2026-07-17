@@ -3,7 +3,6 @@ import { getNewsBySlug, getLatestNews } from "@/lib/service/news";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa";
 
 export default async function page({ params }) {
   const { slug } = await params;
@@ -47,6 +46,7 @@ export default async function page({ params }) {
               src={news.thumbnailUrl}
               alt={news.title}
               fill
+              loading="eager"
               sizes="(max-width: 768px) 100vw, 768px"
               className="object-cover"
               priority
@@ -59,22 +59,19 @@ export default async function page({ params }) {
         </div>
       </article>
       {/* sidebar */}
-      <aside className="p-4 flex flex-col gap-4 bg-stone-200 rounded-sm ml-2 border-l border-stone-300">
-        <span className="text-2xl font-semibold mb-6 border-b border-stone-500 py-4">
+      <aside className="p-4 flex flex-col gap-4 bg-stone-200 md:rounded-sm ml-2 md:border-l border-stone-300 mb-16 md:w-auto w-90 border-t">
+        <span className="text-2xl font-semibold mb-6 border-b border-stone-500 py-4 md:text-left text-center">
           Berita Terbaru Lainnya
         </span>
         {recentNews.map((item) => (
           <Link
             key={item.id}
             href={`/berita/${item.slug}`}
-            className="text-lg/tight line-clamp-2 hover:underline border-b border-stone-300 py-2"
+            className="text-lg/tight line-clamp-2 hover:underline border-b border-stone-300 py-2 md:text-left text-center"
           >
             {item.title}
           </Link>
         ))}
-        <div className="bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-600 p-2 rounded-full w-fit">
-          <FaInstagram className="text-white size-4" />
-        </div>
       </aside>
     </section>
   );
