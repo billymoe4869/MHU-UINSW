@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 
 export default function HeroSection() {
   const slides = [
-    { image: "/hero/foto_5.jpg" },
-    { image: "/hero/foto_6.jpg" },
+    { image: "/hero/foto_5.jpeg" },
+    { image: "/hero/foto_6.jpeg" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
