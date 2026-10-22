@@ -36,7 +36,7 @@ export default function Navbar({ children }) {
   }, [isOpen]);
 
   return (
-    <header className="w-full border-b sticky top-0 left-0 right-0 bg-stone-600 text-(--color-background) z-40 h-auto shadow-sm">
+    <header className="w-full border-b sticky top-0 left-0 right-0 bg-(--color-header) text-(--color-background) z-40 h-auto shadow-sm">
       <div className="wrapper border-b border-gray-500 max-w-7xl flex items-center justify-between mx-auto px-4 py-3">
         {/* Logo Container */}
         <div className="logo-container flex gap-2 w-auto justify-center items-center">
