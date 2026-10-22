@@ -6,6 +6,7 @@
   --color-text: #2c2c2c; /* hitam lembut untuk text utama*/
   --color-surface: #f0ede8; /* abu krem untuk card atau section */
   --color-background: #fafaf8; /*putih hangat, bukan putih dingin */
+  --color-header: #007ab5;
   --color-muted: #7a7068 /* teks sekunder */;
 }
 
