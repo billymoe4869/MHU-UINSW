@@ -10,6 +10,7 @@
   --color-background: #fafaf8; /*putih hangat, bukan putih dingin */
   --color-header: #007ab5;
   --color-muted: #7a7068 /* teks sekunder */;
+  --color-footer: #37b3f0;
 }
 
 body {
