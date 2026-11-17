@@ -4,7 +4,7 @@ import { IoLogoInstagram, IoMail, IoLogoFacebook } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-(--color-footer) text-white">
+    <footer className="w-full bg-(--color-accent) text-(--color-header)">
       <div className="container-footer flex flex-col">
         <div className="top-wrapper grid w-full max-w-7xl mx-auto px-6 py-12 gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
           <div className="logo-footer flex gap-1 flex-col lg:col-span-2 lg:border-r border-gray-700 mr-6 my-auto">
